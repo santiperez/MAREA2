@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Users\Santi\Desktop\MAREA2\packages\NUnit.Runners.2.6.2\tools\nunit.exe</StartProgram>
+    <StartArguments>/run MareaUnitTests.dll</StartArguments>
+    <StartWorkingDirectory>C:\Users\Santi\Desktop\MAREA2\MareaUnitTests\bin\Debug\</StartWorkingDirectory>
+  </PropertyGroup>
+</Project>

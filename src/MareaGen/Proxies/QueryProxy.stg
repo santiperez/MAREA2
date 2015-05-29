@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Net;
+using Marea;
+
+namespace <NAMESPACE> 
+{
+	public class <CLASS>Query : QueryService, <INTERFACES:{I|global::<I>}; separator=", ">
+	{
+		public <CLASS>Query(IServiceContainer container, ServiceAddress serviceAddress) : base(container, serviceAddress) { }
+		
+		<PUBSUBS:{P|
+		
+			//beginpublishsubscribe
+			protected <P.TYPE>  _<P.NAME>;
+			public <P.TYPE> <P.NAME> 
+			{
+				get
+				{
+					if(  _<P.NAME> == null)
+					{
+						 _<P.NAME> = container.CreatePrimitive\<<P.TYPE>>(id,"<P.NAME>");
+						 _<P.NAME>.AddSubscriber (AddOrRemoveSubscriber);
+					\} 
+					return _<P.NAME>;
+				\}
+			\}
+			public void Fire<P.NAME>(string name, <P.SUBTYPE> value) 
+			{
+				_<P.NAME>.Notify(new ServiceAddress(name), value);
+			\}
+
+		}>
+		<FUNCS:{F|
+			// beginrpc
+			public <F.RETURN> <F.NAME>(<F.PARAMS:{P|<P.PARAM_TYPE> <P.PARAM_NAME>}; separator=", ">)
+			{
+				MareaAddress mad = bindedServices.First();
+				global::<INTERFACE> s = (global::<INTERFACE>)container.GetService(mad);
+				<if(F.HAS_RETURN)> return <endif>
+				s.<F.NAME>(<F.PARAMS:{P|<P.PARAM_NAME>}; separator=", ">);
+
+			\}
+			//endrpc
+		}>
+
+
+		public override void AddMatchingService(ServiceAddress serviceAddress, IService service)
+		{
+			global::<INTERFACE> s = (global::<INTERFACE>)service;
+			
+			<PUBSUBS:{P|
+				//beginpublishsubscribe
+				if (_<P.NAME> != null)
+				{
+					if (_<P.NAME>.GetTotalSubscriptions () > 0)
+					s.<P.NAME>.Subscribe (id, this.Fire<P.NAME>);
+				\}
+				//endpublishsubscribe
+			}>
+		
+			AddMatchingServiceAddress(serviceAddress);
+		\}
+		
+		public override void RemoveMatchingService(ServiceAddress serviceAddress, IService service)
+		{
+			global::<INTERFACE> s = (global::<INTERFACE>)service;
+			
+			bool unused = true;
+			
+			<PUBSUBS:{P|
+				//beginpublishsubscribe
+				if (_<P.NAME>.GetTotalSubscriptions () == 0) 
+				{
+					s.<P.NAME>.Unsubscribe (id, this.Fire<P.NAME>);
+				\} else {
+					unused = false;
+				\}
+				//endpublishsubscribe
+			}>
+			
+		
+			if (unused) {
+				RemoveMatchingServiceAddress (serviceAddress);
+			\}
+		\}
+
+	\} // endclass
+\} // endnamespace

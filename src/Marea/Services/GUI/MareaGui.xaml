@@ -1,0 +1,42 @@
+﻿<Window  x:Class="Marea.MareaGui"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="MAREA2" Height="500" Width="800" Icon="/Marea;component/Logos/logo_marea.png">
+    <Grid Margin="0,0,0,0"  VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="501*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="availableLstView" ItemsSource="{DynamicResource AvailableServices}" Margin="18,19,0,0" SelectionChanged="avaliableLstView_SelectionChanged" HorizontalAlignment="Left" Height="129" VerticalAlignment="Top" Width="232" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header=" Available Services" DisplayMemberBinding="{Binding Key}" Width="189" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView Name="runningLstView" ItemsSource="{DynamicResource RunningServices}" Margin="18,171,20,0" SelectionChanged="runningLstView_SelectionChanged" Height="125" VerticalAlignment="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header=" Running Services" DisplayMemberBinding="{Binding Key}" Width="461" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="645,31,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.467,0.523" Click="StartButton_Click" Height="44"/>
+        <Button x:Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="645,105,0,0" VerticalAlignment="Top" Width="76" Click="StopButton_Click" Height="43"/>
+        <TextBox x:Name="IPTextBox" HorizontalAlignment="Left" Height="23" Margin="482,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" IsEnabled="False"/>
+        <TextBox x:Name="PortTextBox" HorizontalAlignment="Left" Height="23" Margin="482,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" IsEnabled="False"/>
+        <Label Content="IP:" HorizontalAlignment="Left" Margin="454,31,0,0" VerticalAlignment="Top"/>
+        <Label Content="Port:" HorizontalAlignment="Left" Margin="442,75,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="NodeInfoCkeckBox" Content="Edit Node/Instance Info" HorizontalAlignment="Left" Margin="284,75,0,0" VerticalAlignment="Top" Checked="NodeInfoCkeckBox_Checked" Unchecked="NodeInfoCkeckBox_Unchecked"/>
+        <TextBox x:Name="InstanceTextBox" HorizontalAlignment="Left" Height="23" Margin="482,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" IsEnabled="False"/>
+        <Label Content="Instance:" HorizontalAlignment="Left" Margin="421,122,0,0" VerticalAlignment="Top"/>
+        <ListView x:Name="remoteLstView" ItemsSource="{DynamicResource RemoteServices}" Margin="18,316,20,-150" SelectionChanged="runningLstView_SelectionChanged" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header=" Remote Services" DisplayMemberBinding="{Binding Key}" Width="574" />
+                    <GridViewColumn Header=" State" DisplayMemberBinding="{Binding Value}" Width="100" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

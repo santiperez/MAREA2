@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Config" nillable="true" type="Config" />
+  <xs:complexType name="Config">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Start" type="ArrayOfService" />
+    </xs:sequence>
+    <xs:attribute name="DefaultSubsystem" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Service" nillable="true" type="Service" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Service">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Id" type="xs:string" />
+    <xs:attribute name="Subsystem" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

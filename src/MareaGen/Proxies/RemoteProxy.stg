@@ -1,0 +1,51 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Net;
+using Marea;
+
+namespace <NAMESPACE> {
+
+public class <CLASS>Proxy : RemoteProducer, <INTERFACES:{I|global::<I>}; separator=", "> {
+
+	protected IRemoteProcedureCallProtocol rpc;
+
+	public <CLASS>Proxy(IServiceContainer container, ServiceAddress serviceAddress, TransportAddress control) : base(control) {
+		this.container = container;
+		this.id = serviceAddress;
+		this.rpc = container.GetProtocol\<IRemoteProcedureCallProtocol> ();
+	}
+
+<PUBSUBS:{P| 
+
+		//begin-publish-subscribe
+		protected <P.TYPE> _<P.NAME>;
+		public <P.TYPE> <P.NAME> {
+			get {
+				if( _<P.NAME> == null) { _<P.NAME> = container.CreatePrimitive\<<P.TYPE>>(id,"<P.NAME>"); \}
+				return _<P.NAME>;
+			\}		
+		\}
+		//end-publish-subscribe
+
+}>
+
+<FUNCS:{F|
+
+	// begin-rpc
+	public <F.RETURN> <F.NAME>(<F.PARAMS:{P|<P.PARAM_TYPE> <P.PARAM_NAME>}; separator=", ">) {
+		<if(F.HAS_RETURN)>
+		return (<F.RETURN>)
+		<endif>
+		rpc.CallFunction(this.ControlAddress,id+"/<F.NAME>", new object[] { <F.PARAMS:{P|<P.PARAM_NAME>}; separator=", "> \} );
+	\}
+	// end-rpc
+
+}>
+
+
+} // end-class
+
+} // end-namespace

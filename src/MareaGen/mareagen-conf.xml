@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <Non-Serializable-Assemblies>
+    <Assembly Name="Build"/>
+    <Assembly Name="log4net"/>
+    <Assembly Name="Antlr4.StringTemplate"/>
+    <Assembly Name="Args"/>
+    <Assembly Name="Thorn"/>
+    <Assembly Name="MGenTypes"/>
+    <Assembly Name="MareaGen.vshost"/>
+  </Non-Serializable-Assemblies>
+</Config>

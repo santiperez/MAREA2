@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Marea.Examples.SDU</id>
+    <version>0.0.1</version>
+    <authors>j. lopez, s. perez</authors>
+    <owners>s.perez</owners>
+    <description>MAREA examples SDU project</description>
+    <summary>Marea.Examples.SDU is a library written entirely in C# for the .NET platform. It is implemented as an assembly  and thus can easily be incorporated into other projects (in any .NET language).</summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/santiperez/MAREA2</projectUrl>
+    <iconUrl>http://img442.imageshack.us/img442/3457/logomareaopt.png</iconUrl>
+    <dependencies>
+      <dependency id="Marea.Examples.IDU" version="0.0.1" />
+    </dependencies>
+  </metadata>
+</package>

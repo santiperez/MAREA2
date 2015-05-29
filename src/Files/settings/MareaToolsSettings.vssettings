@@ -1,0 +1,38 @@
+<UserSettings>
+	<ApplicationIdentity version="11.0"/>
+	<ToolsOptions/>
+	<Category name="Environment_Group" RegisteredName="Environment_Group">
+		<Category name="Environment_ExternalTools" Category="{E8FAE9E8-FBA2-4474-B134-AB0FFCFB291D}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_ExternalTools" PackageName="Visual Studio Environment Package">
+			<ExternalTools>
+				<UserCreatedTool>
+					<Arguments>/t:Build,Package,Publish /p:Configuration=Debug;NuGetServer=http://localhost:7073;NuGetKey=3237c377-4253-4b48-91ec-7b5457df28d5 $(ProjectDir)$(ProjectFileName)</Arguments>
+					<CloseOnExit>true</CloseOnExit>
+					<Command>C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe</Command>
+					<Index>0</Index>
+					<InitialDirectory>$(ProjectDir)</InitialDirectory>
+					<IsGUIapp>false</IsGUIapp>
+					<NameID>0</NameID>
+					<Package>{00000000-0000-0000-0000-000000000000}</Package>
+					<PromptForArguments>true</PromptForArguments>
+					<SaveAllDocs>true</SaveAllDocs>
+					<Title>MAREA2 NuGet-&gt;Push service</Title>
+					<Unicode>false</Unicode>
+					<UseOutputWindow>true</UseOutputWindow>
+					<UseTaskList>false</UseTaskList>
+				</UserCreatedTool>
+				<ModifyRegisteredTool SourceKeyName="Create GUID">
+					<Index>1</Index>
+				</ModifyRegisteredTool>
+				<ModifyRegisteredTool SourceKeyName="PreEmptive Dot&amp;fuscator and Analytics">
+					<Index>2</Index>
+				</ModifyRegisteredTool>
+				<ModifyRegisteredTool SourceKeyName="Spy++ (x64)">
+					<Index>3</Index>
+				</ModifyRegisteredTool>
+				<ExcludeRegisteredTool SourceKeyName="MFC/ATL &amp;Trace Tool"/>
+				<ExcludeRegisteredTool SourceKeyName="Error Loo&amp;kup"/>
+				<ExcludeRegisteredTool SourceKeyName="Sp&amp;y++"/>
+			</ExternalTools>
+		</Category>
+	</Category>
+</UserSettings>

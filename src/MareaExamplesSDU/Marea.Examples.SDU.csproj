@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(MSBuildProjectDirectory)\..\</SolutionDir>
+    <!-- Enable the restore command to run before builds -->
+    <RestorePackages Condition="  '$(RestorePackages)' == '' ">false</RestorePackages>
+    <!-- Property that enables building a package from a project -->
+    <BuildPackage Condition=" '$(BuildPackage)' == '' ">false</BuildPackage>
+    <!-- Download NuGet.exe if it does not already exist -->
+    <DownloadNuGetExe Condition=" '$(DownloadNuGetExe)' == '' ">false</DownloadNuGetExe>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{043836E3-31EB-4CD7-A185-8C610286E66E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Examples</RootNamespace>
+    <AssemblyName>MareaServicesSDU</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Battery.cs" />
+    <Compile Include="BatteryManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="TestManager.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="CentralServer.cs" />
+    <Compile Include="AircraftController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MareaExamplesIDU\Marea.Examples.IDU.csproj">
+      <Project>{A443F12E-5CC0-4147-B597-991F7BD3A718}</Project>
+      <Name>Marea.Examples.IDU</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MareaInterface\Marea.Interface.csproj">
+      <Project>{BAF3D6E6-4D68-42E7-BC16-ADF0F6C1570F}</Project>
+      <Name>Marea.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marea.Tools\Marea.Tools.csproj">
+      <Project>{23E00FFE-0FF2-455D-B8B1-1B61E2EEEB3B}</Project>
+      <Name>Marea.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Marea.Examples.SDU.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Automatic Nuget Upload -->
+  <PropertyGroup>
+    <PackageDir>$(MSBuildProjectDirectory)\Package\$(Configuration)</PackageDir>
+    <NuGet>$(MSBuildProjectDirectory)\..\.nuget\nuget.exe</NuGet>
+    <NuGetServer>http://localhost:7073/</NuGetServer>
+    <NuGetKey>3237c377-4253-4b48-91ec-7b5457df28d5</NuGetKey>
+  </PropertyGroup>
+  <!--<Import Project="$(SolutionDir)/.nuget/nuget.targets" />-->
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="!HasTrailingSlash('$(SolutionDir)')" />
+  <Import Project="$(SolutionDir).nuget\NuGet.targets" Condition="HasTrailingSlash('$(SolutionDir)')" />
+</Project>

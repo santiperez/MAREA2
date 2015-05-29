@@ -1,0 +1,145 @@
+﻿<error errorId="1d5148f7-60cd-4573-b044-de76b8b2c74f" application="/LM/W3SVC/3/ROOT" host="SANTI-PC" type="System.NullReferenceException" message="Object reference not set to an instance of an object." source="NuGet.Server" detail="System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at NuGet.Server.Infrastructure.PackageAuthenticationService.IsAuthenticatedInternal(String apiKey, NameValueCollection appSettings)&#xD;&#xA;   at NuGet.Server.Infrastructure.PackageAuthenticationService.IsAuthenticated(IPrincipal user, String apiKey, String packageId)&#xD;&#xA;   at NuGet.Server.PackageService.Authenticate(HttpContextBase context, String apiKey, String packageId)&#xD;&#xA;   at NuGet.Server.PackageService.CreatePackage(HttpContextBase context)&#xD;&#xA;   at NuGet.Server.NuGetRoutes.&lt;MapRoutes&gt;b__1(RequestContext context)&#xD;&#xA;   at RouteMagic.HttpHandlers.DelegateHttpHandler.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2013-01-24T16:38:37.8426343Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONTENT_LENGTH:5166&#xD;&#xA;HTTP_CONTENT_TYPE:multipart/form-data; boundary=---------------------------8cfc870c6b70b20&#xD;&#xA;HTTP_HOST:localhost:7073&#xD;&#xA;HTTP_USER_AGENT:NuGet Command Line/2.2.31210.9045 (Microsoft Windows NT 6.1.7601 Service Pack 1)&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Content-Length: 5166&#xD;&#xA;Content-Type: multipart/form-data; boundary=---------------------------8cfc870c6b70b20&#xD;&#xA;Host: localhost:7073&#xD;&#xA;User-Agent: NuGet Command Line/2.2.31210.9045 (Microsoft Windows NT 6.1.7601 Service Pack 1)&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/3/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\Projects\MAREA2\MareaNugetServer\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="5166" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=---------------------------8cfc870c6b70b20" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="3" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/3" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/api/v2/package/" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\Projects\MAREA2\MareaNugetServer\api\v2\package\" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="7589" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="PUT" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/api/v2/package/" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="7073" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.0" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/api/v2/package/" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="5166" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=---------------------------8cfc870c6b70b20" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:7073" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="NuGet Command Line/2.2.31210.9045 (Microsoft Windows NT 6.1.7601 Service Pack 1)" />
+    </item>
+  </serverVariables>
+</error>

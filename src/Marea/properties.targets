@@ -1,0 +1,16 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+  
+  <!--Its mandatory that first constant does not include $(DefineConstants);. Otherwise include it;-->
+  <!--Transport Mode. Select between one of this two options: SYNCHRONOUS_TRANSPORTS, SYNCHRONOUS_TRANSPORTS-->
+      <DefineConstants>SYNCHRONOUS_TRANSPORTS</DefineConstants>
+      <!--<DefineConstants>ASYNCHRONOUS_TRANSPORTS</DefineConstants>-->
+  
+  <!--<DefineConstants> $(DefineConstants);CONSTANT</DefineConstants>-->
+  
+</PropertyGroup>
+</Project>
+
+
+
+

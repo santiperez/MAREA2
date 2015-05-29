@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Marea.MareaCoder">
+    <Position X="34.75" Y="22.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAkAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Coder\MareaCoder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="tables" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Marea.Lane">
+    <Position X="43" Y="23.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Lanes\Lane.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="NetworkHandler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Marea.Network">
+    <Position X="26.5" Y="5.75" Width="2.75" />
+    <Members>
+      <Field Name="container" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Broadcast" Type="Marea.TransportAddress" FixedFromPoint="true">
+      <Path>
+        <Point X="29.25" Y="6.133" />
+        <Point X="32.25" Y="6.133" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="lastMulticast" Type="Marea.IpTransportAddress" FixedFromPoint="true">
+      <Path>
+        <Point X="29.25" Y="6.875" />
+        <Point X="31.5" Y="6.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BEAAAAAEICCCAQCAANBRABBBBIAAAAwQIAAAAAAQEAA=</HashCode>
+      <FileName>Network\Network.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="container" />
+      <Field Name="Broadcast" />
+      <Field Name="Control" />
+      <Field Name="router" />
+      <Field Name="TcpTransport" />
+      <Field Name="lastMulticast" />
+      <Field Name="UdpTransport" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Marea.NetworkMessage">
+    <Position X="46" Y="18.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAgAAAAAAIAICAAAAAAIAAAAAAAwAA=</HashCode>
+      <FileName>Network\NetworkMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.LockFreeQueue" Collapsed="true">
+    <Position X="45.75" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAgAAAAAAAAABAAAAABAAABAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Network\Pool\LockFreeQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.SingleLinkNode&lt;NetworkMessage&gt;" Collapsed="true">
+    <Position X="43.75" Y="27" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Pool\LockFreeQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.SyncMethods" Collapsed="true">
+    <Position X="42" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Pool\SyncMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.Router">
+    <Position X="27" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAACBAAAAAAAAAA=</HashCode>
+      <FileName>Network\Router\Router.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.IpTransportAddress" Collapsed="true">
+    <Position X="31.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAEgIAAAAAAAAAAAIACAAAAAAAAABA=</HashCode>
+      <FileName>Network\TransportAddresses\IpTransportAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.SerialTransportAddress" Collapsed="true">
+    <Position X="33.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAEgAIAAAAAAAACAIACAAAAAAAAABA=</HashCode>
+      <FileName>Network\TransportAddresses\SerialTransportAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.ConnectionManager">
+    <Position X="36.5" Y="15.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAACBAAAAAAAAAAAIACAAACAAAA=</HashCode>
+      <FileName>Network\Transports\ConnectionManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="connections" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Marea.Connection" BaseTypeListCollapsed="true">
+    <Position X="38" Y="8.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAACAAAAAQEAgEDACAAAIAAAAAAAJEGAAACAAAI=</HashCode>
+      <FileName>Network\Transports\Synchronous\TCP\Connection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.TCPTransport" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="8.5" Width="4.75" />
+    <AssociationLine Name="outConnections" Type="Marea.Connection" FixedFromPoint="true">
+      <Path>
+        <Point X="35.25" Y="9" />
+        <Point X="37.542" Y="9" Type="JumpStart" />
+        <Point X="37.708" Y="9" Type="JumpEnd" />
+        <Point X="38" Y="9" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.529" Y="0.681" Height="0.182" Width="4" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAAAAAAAAACEAABAIIAAQAJgAAAAAAAAI=</HashCode>
+      <FileName>Network\Transports\Synchronous\TCP\TCPTransport.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="address" />
+      <Field Name="connections" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="outConnections" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.UDPTransport" BaseTypeListCollapsed="true">
+    <Position X="30.75" Y="13.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAACACAAEAAAAEBACAAABAIAAAQAJAAAAAAAAAI=</HashCode>
+      <FileName>Network\Transports\Synchronous\UDP\UDPTransport.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="address" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.TransportException">
+    <Position X="38.5" Y="22" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Transports\TransportException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.TransportSendException">
+    <Position X="38.5" Y="24" Width="3" />
+    <InheritanceLine Type="Marea.TransportException" FixedToPoint="true">
+      <Path>
+        <Point X="39.875" Y="23.233" />
+        <Point X="39.875" Y="24" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Network\Transports\TransportException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.DiscoverProtocol" BaseTypeListCollapsed="true">
+    <Position X="20" Y="13.75" Width="3" />
+    <Members>
+      <Field Name="container" Hidden="true" />
+    </Members>
+    <AssociationLine Name="discoverTimers" Type="System.Threading.Timer">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.224" Y="-0.73" Height="0.182" Width="2.753" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACCAAAAAAABGABAgAAAAAAAAIAAAECAAAAA=</HashCode>
+      <FileName>Protocol\Discover\DiscoverProtocol.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="container" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="discoverTimers" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.ProtocolUtils" Collapsed="true">
+    <Position X="42" Y="27" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAKIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Protocol\ProtocolUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.FunctionCall">
+    <Position X="25.5" Y="17.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAJAAAAAAABAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Protocol\RPC\RemoteProcedureCallProtocol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.RemoteProcedureCallProtocol" BaseTypeListCollapsed="true">
+    <Position X="26" Y="13.75" Width="3" />
+    <Members>
+      <Field Name="container" Hidden="true" />
+    </Members>
+    <AssociationLine Name="functionCalls" Type="Marea.FunctionCall">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.113" Y="0.25" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="invokersCache" Type="Marea.IInvoke">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-2.786" Y="0.236" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAAACAAAACgAIAAAEIAAAAAAAAAAAAAAIAAAAAAAQAA=</HashCode>
+      <FileName>Protocol\RPC\RemoteProcedureCallProtocol.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="container" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="functionCalls" />
+      <Field Name="invokersCache" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.EventImpl&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="15" Y="23.5" Width="3" />
+    <NestedTypes>
+      <Class Name="Marea.EventImpl&lt;T&gt;.Subscription" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Protocol\Subscribe\Events\Event.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <AssociationLine Name="manageSubscriber" Type="Marea.ManageSubscriberFunc">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.25" Y="-1.227" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAACAAAAAAAAQAAAAGICRBQAAgACAAAAA=</HashCode>
+      <FileName>Protocol\Subscribe\Events\Event.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="manageSubscriber" />
+      <Field Name="provider" />
+      <Field Name="subscriptions" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.SubscribeProtocol">
+    <Position X="13" Y="13.75" Width="3.25" />
+    <Members>
+      <Field Name="container" Hidden="true" />
+    </Members>
+    <AssociationLine Name="subscribedPrimitives" Type="Marea.MareaAddress">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-3.082" Y="1.478" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAAAoAAAACAAAIAAAAAAQEAAAACAABEQYAACAAAAAAQ=</HashCode>
+      <FileName>Protocol\Subscribe\SubscribeProtocol.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="container" />
+      <Field Name="sendData" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="subscribedPrimitives" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.VariableImpl&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="23.5" Width="3" />
+    <NestedTypes>
+      <Class Name="Marea.VariableImpl&lt;T&gt;.Subscription" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Protocol\Subscribe\Variables\Variable.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <AssociationLine Name="manageSubscriber" Type="Marea.ManageSubscriberFunc">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.394" Y="-1.158" Height="0.182" Width="1.514" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAACAAAAAAAAQAAAAGICRBQAAgACAAAAA=</HashCode>
+      <FileName>Protocol\Subscribe\Variables\Variable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="provider" />
+      <Field Name="manageSubscriber" />
+      <Field Name="subscriptions" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.QueryManager">
+    <Position X="13.5" Y="1" Width="4" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAAAAEAAAAAAAAAAAiABAAAAAAgAgAAAAAAAjA=</HashCode>
+      <FileName>Queries\QueryManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="queries" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Marea.ServiceContainer" BaseTypeListCollapsed="true">
+    <Position X="20" Y="5.5" Width="4.25" />
+    <AssociationLine Name="network" Type="Marea.Network">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.654" Y="0.113" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="discoverProtocol" Type="Marea.DiscoverProtocol">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.188" Y="0.837" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RPCProtocol" Type="Marea.RemoteProcedureCallProtocol">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.194" Y="0.326" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAACAAAgAKIAAAAAiCBBAAACAAgAEBARJgAAAEAAAkI=</HashCode>
+      <FileName>ServiceContainer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="serviceManager" />
+      <Field Name="network" />
+      <Field Name="discoverProtocol" />
+      <Field Name="subscribeProtocol" />
+      <Field Name="RPCProtocol" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="mareaMessagesProcess" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.GUI">
+    <Position X="4" Y="13.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAACAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\GUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.NodeManager" BaseTypeListCollapsed="true">
+    <Position X="1" Y="11.25" Width="2.75" />
+    <Members>
+      <Field Name="container" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAIAAAAAICAAAAAAAAAAAQAAEAAAFBAAIAAAAAAAAAA=</HashCode>
+      <FileName>Services\NodeManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="container" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.ServiceManager">
+    <Position X="13.25" Y="5.5" Width="3.75" />
+    <Members>
+      <Field Name="container" Hidden="true" />
+    </Members>
+    <AssociationLine Name="servicesIDU" Type="Marea.ServiceDescription">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-2.391" Y="3.686" Height="0.182" Width="3.31" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="servicesSDU" Type="Marea.ServiceImplementation" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.5" Y="11.093" />
+        <Point X="16.5" Y="13.168" />
+        <Point X="10.125" Y="13.168" />
+        <Point X="10.125" Y="13.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-10.072" Y="1.954" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>hAAAAAgAACAAAggIKBBQAAAAQAEAUBQgIQBAIIAUQAA=</HashCode>
+      <FileName>Services\ServiceManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="container" />
+      <Field Name="queryManager" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="services" />
+      <Field Name="proxies" />
+      <Field Name="runningServices" />
+      <Field Name="servicesIDU" />
+      <Field Name="servicesSDU" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Marea.DigitsSumExtension" Collapsed="true">
+    <Position X="47.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\AddDigits.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.AssembliesManager">
+    <Position X="28.5" Y="21.25" Width="3.75" />
+    <NestedTypes>
+      <Class Name="Marea.AssembliesManager.NotFoundNamespaceException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Utils\Assemblies\AssembliesManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAQgAQAAAAYAAAIAARAABAAAAASAAAAAAAOQA=</HashCode>
+      <FileName>Utils\Assemblies\AssembliesManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.ExtendedAssembly" Collapsed="true">
+    <Position X="43.75" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Utils\Assemblies\ExtendedAssembly.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Marea.ServiceAddress" Collapsed="true">
+    <Position X="11.25" Y="20.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Marea.MareaAddress" Collapsed="true">
+    <Position X="11.25" Y="19" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Marea.Service">
+    <Position X="4.25" Y="10" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.Timer" Collapsed="true">
+    <Position X="16.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Marea.QueryService">
+    <Position X="21.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Marea.ServiceDescription">
+    <Position X="9.25" Y="2.75" Width="3" />
+    <AssociationLine Name="events" Type="Marea.EventDescription">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-4.164" Y="0.575" Height="0.182" Width="1.915" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="functions" Type="Marea.FunctionDescription" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.25" Y="4.062" />
+        <Point X="5.708" Y="4.062" Type="JumpStart" />
+        <Point X="5.542" Y="4.062" Type="JumpEnd" />
+        <Point X="3.438" Y="4.062" />
+        <Point X="3.438" Y="2.69" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-6.062" Y="1.508" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Field Name="events" />
+      <Field Name="variables" />
+      <Field Name="functions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Marea.ServiceImplementation">
+    <Position X="8.5" Y="13.5" Width="3.25" />
+    <AssociationLine Name="ConsumerServices" Type="Marea.ConsumerServiceInfo">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-2.837" Y="0.178" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Field Name="ConsumerServices" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Marea.ConsumerServiceInfo">
+    <Position X="8.75" Y="16.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Marea.EventDescription">
+    <Position X="4.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Marea.VariableDescription">
+    <Position X="7" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Marea.FunctionDescription">
+    <Position X="1" Y="0.75" Width="2.75" />
+    <AssociationLine Name="parameters" Type="Marea.ParameterDescription" FixedFromPoint="true">
+      <Path>
+        <Point X="2.812" Y="2.69" />
+        <Point X="2.812" Y="3.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.087" Y="0.34" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Field Name="parameters" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Marea.ParameterDescription">
+    <Position X="1.25" Y="3.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Marea.TransportAddress">
+    <Position X="32.25" Y="4.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MareaGen.CoderTables">
+    <Position X="34.5" Y="24.5" Width="2.75" />
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Property Name="DecodeTable" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="Marea.IInvoke">
+    <Position X="28" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Protocol\RPC\Invokers.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Marea.INodeManager">
+    <Position X="1" Y="8.25" Width="2.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Marea.IService">
+    <Position X="3.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Marea.Event&lt;T&gt;">
+    <Position X="14.5" Y="20.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Marea.Variable&lt;T&gt;">
+    <Position X="8.75" Y="21" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Marea.Primitive">
+    <Position X="11.5" Y="21.25" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Marea.IConnection">
+    <Position X="39" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="Marea.NetWorkStatusCode">
+    <Position X="38" Y="20" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAE=</HashCode>
+      <FileName>Network\NetworkMessage.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Marea.ConnectionState">
+    <Position X="35.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Network\Transports\ConnectionManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Marea.SubscribeOption">
+    <Position X="36.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Protocol\Subscribe\SubscribeProtocol.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Marea.NetworkProcess">
+    <Position X="42.75" Y="24.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Lanes\Lane.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Marea.CloseConnection">
+    <Position X="42" Y="18.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\Transports\ConnectionManager.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Marea.ManageSubscriberFunc">
+    <Position X="11.75" Y="23.5" Width="2" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="Marea.MessageProcess">
+    <Position X="24.75" Y="4" Width="1.75" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="Marea.SendDataPrimitiveDelegate">
+    <Position X="15.5" Y="18.5" Width="2.25" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="Marea.NotifyFunc&lt;T&gt;">
+    <Position X="12" Y="26" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Delegate Name="MareaGen.DecodeFunction">
+    <Position X="39.5" Y="26.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
