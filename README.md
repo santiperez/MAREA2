@@ -29,5 +29,5 @@ Most of the present middleware is focused on client-server relationships between
 You can download it [here](https://github.com/santiperez/MAREA2/blob/master/documentation/MAREA2.pdf)
                                   
 ## Contributors
-[Juan López](juan.lopez-rubio@upc.edu)
+[Juan López](juan.lopez-rubio@upc.edu)  
 [Santi Pérez](santiago.perez.fernandez@gmail.com)
