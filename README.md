@@ -1,6 +1,4 @@
-======================================================================================================================================================
--                                   MAREA2: Middleware Architecture for Remote Embedded Applications 2                                               -        
-======================================================================================================================================================
+# MAREA2: Middleware Architecture for Remote Embedded Applications 2
 
 Marea middleware proposes a modular architecture based on services. This middleware combines both client-server and multi-point message communications 
 and it is specially suited to communicate low-cost components interconnected by local networks.
@@ -10,11 +8,9 @@ are semantic units that behave as producers of data and as consumers of data com
 not important because the middleware manages their discovery. The middleware also handles all the  transfer chores: message addressing, data marshaling
 and demarshalling delivery, flow control, retries, etc.
 
-Most of the present middleware is focused on client-server relationships between components. While this approach is applicable for most systems, it does      not take benefit of the multicast capabilities of local networks. Publish-Subscribe communications are better suited for this sort of systems. Marea        combines both client-server and multi-point message communications and it is specially suited to communicate low-cost components interconnected by local      networks.
+Most of the present middleware is focused on client-server relationships between components. While this approach is applicable for most systems, it does      not take benefit of the multicast capabilities of local networks. Publish-Subscribe communications are better suited for this sort of systems. Marea        combines both client-server and multi-point message communications and it is specially suited to communicate low-cost components interconnected by local  networks.
  
---------------------------------------
--       Solution structure           -
---------------------------------------                                   
+## Solution structure
 - Marea      
 - Marea.Console
 - Marea.Gen                         
@@ -22,14 +18,16 @@ Most of the present middleware is focused on client-server relationships between
 - Marea.UnitTests
 - Marea.UnitTests.Entities
 - Marea.NugetServer
-- /Examples/Marea.Examples.IDU
-- /Examples/Marea.Examples.SDU
-- /Libs
-- /Files
-
+- Examples/Marea.Examples.IDU
+- Examples/Marea.Examples.SDU
+- Libs
+- Files
 - Marea.PerfomanceTests
-- Marea.Services                      
+- Marea.Services 
+
+## Documentation
+You can download it [here](https://github.com/santiperez/MAREA2/blob/master/documentation/MAREA2.pdf)
                                   
-MAREA 2 Contributors:
-	Juan López  (juan.lopez-rubio@upc.edu)
-	Santi Pérez (santiago.perez-fernandez@estudiant.upc.edu)
+## Contributors
+[Juan LÃ³pez](juan.lopez-rubio@upc.edu)
+[Santi PÃ©rez](santiago.perez.fernandez@gmail.com)
